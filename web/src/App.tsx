@@ -1,12 +1,10 @@
-import React from 'react';
-// import './assets/styles/global.css';
 import './assets/styles/global.css'
+import React from 'react';
+import Landing from './pages/Landing';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Primeiro teste da aplicação.</h1>
-    </div>
+    <Landing />
   );
 }
 
