@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PageHeader from '../../components/PageHeader';
+import './styles.css';
 
 function TeacherForm () {
     return (
         <div>
-            <h1>Teacher Form</h1>
-            <Link to='/'>Página Inicial</Link>
+            <PageHeader
+                title='Que incrível que você quer dar aulas.'
+            />
         </div>
     );
 }
