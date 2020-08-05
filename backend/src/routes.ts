@@ -2,7 +2,7 @@ import { Router } from 'express';
 import ClassesController from './controllers/ClassesController';
 import ConnectionsController from './controllers/ConnectionsController';
 
-const routes= new Router();
+const routes = new Router();
 const classesControllers = new ClassesController();
 const connectionsControllers = new ConnectionsController();
 
