@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -13,8 +14,10 @@
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.7",
+    "@types/jest": "^26.0.8",
+    "jest": "^26.2.2",
     "ts-node-dev": "^1.0.0-pre.56",
-    "typescript": "^3.9.7",
-    "@types/express": "^4.17.7"
+    "typescript": "^3.9.7"
   }
 }
