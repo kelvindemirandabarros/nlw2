@@ -12,7 +12,7 @@ export async function up( knex: Knex ) {
             .onDelete( 'CASCADE' ); // Se o professor for excluído da plataforma, todas as aulas dele também serão excluídas.
 
         table.timestamp( 'created_at' )
-            .defaultTo( 'now()' )
+            .defaultTo( knex.raw( 'CURRENT_TIMESTAMP' ) )
             .notNullable();
     });
 }
