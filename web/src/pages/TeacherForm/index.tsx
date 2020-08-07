@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 import PageHeader from '../../components/PageHeader';
@@ -11,6 +12,8 @@ import warningIcon from '../../assets/images/icons/warning.svg';
 import './styles.css';
 
 function TeacherForm () {
+    const history = useHistory();
+
     const [ name, setName ] = useState( '' );
     const [ avatar, setAvatar ] = useState( '' );
     const [ whatsapp, setWhatsapp ] = useState( '' );
@@ -37,24 +40,19 @@ function TeacherForm () {
     function handleCreateClass ( event: FormEvent ) {
         event.preventDefault();
 
-        // api.post( '/classes', {
-        //     name,
-        //     avatar,
-        //     whatsapp,
-        //     bio,
-        //     subject,
-        //     cost: Number( cost ),
-        //     schedule: scheduleItems
-        // });
-
-        console.log({
+        api.post( '/classes', {
             name,
             avatar,
             whatsapp,
             bio,
             subject,
-            cost,
-            scheduleItems
+            cost: Number( cost ),
+            schedule: scheduleItems
+        }).then( () => {
+            alert( 'Cadastro realizado com sucesso.' );
+            history.push( '/' );
+        }).catch( () => {
+            alert( 'Houve um erro no cadastro.' );
         });
     }
 
