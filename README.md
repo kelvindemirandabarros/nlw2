@@ -15,7 +15,7 @@ Projeto feito em TypeScript através das aulas do Next Level Week 2 da plataform
 
 ### Frontend:
 - ReactJS
-
+- Axios
 
 ### Mobile: 
 - React Native
